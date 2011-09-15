@@ -61,6 +61,7 @@ let NERDTreeShowHidden=1
 " Recognize filetypes
 filetype on
 filetype plugin on
+filetype plugin indent on
 
 " Enable autocompletion for PHP/HTML/CSS
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
