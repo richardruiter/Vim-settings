@@ -32,6 +32,11 @@ set smartcase
 " Indicate we have a fast SSH connection
 set ttyfast
 
+" Enable colorcolumn if VIM version > 7.0.2
+if v:version > '702'
+    set colorcolumn=120
+endif
+
 " Use <tab> to match bracket pairs i.o. %
 nnoremap <tab> %
 vnoremap <tab> %
