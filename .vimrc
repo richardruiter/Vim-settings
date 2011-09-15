@@ -44,6 +44,9 @@ vnoremap <tab> %
 " Use <F2> to toggle NERDTree
 map <F2> :NERDTreeToggle<CR>
 
+" Allow use of w!! to write a file as sudo
+cmap w!! %!sudo tee > /dev/null %
+
 " Strip trailing whitespace
 autocmd BufWritePre *.php :%s/\s\+$//e
 
