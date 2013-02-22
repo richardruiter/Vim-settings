@@ -29,12 +29,15 @@ set incsearch
 set ignorecase
 set smartcase
 
+" Enable mouse interaction
+set mouse=a
+
 " Indicate we have a fast SSH connection
 set ttyfast
 
 " Enable colorcolumn if VIM version > 7.0.2
 if v:version > '702'
-    set colorcolumn=120
+    set colorcolumn=81
 endif
 
 " Use <tab> to match bracket pairs i.o. %
@@ -51,8 +54,8 @@ cmap w!! %!sudo tee > /dev/null %
 autocmd BufWritePre *.php :%s/\s\+$//e
 
 " Enable function folding
-au FileType php let php_folding=1
-au FileType php set foldlevel=1
+"au FileType php let php_folding=1
+"au FileType php set foldlevel=1
 
 " Show hidden files in NERDTree
 let NERDTreeShowFiles=1
@@ -67,3 +70,11 @@ filetype plugin indent on
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+
+" PHPCS Zend Coding Standards
+let g:phpcs_std_list="Zend" 
+map <F5> :Phpcs<CR> 
+map <F7> :cprev<CR> 
+map <F8> :cnext<CR> 
+
+set tags=tags;~/.vim/tags/filename
